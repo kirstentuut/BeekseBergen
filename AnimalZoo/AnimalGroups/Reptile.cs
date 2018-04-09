@@ -1,8 +1,13 @@
 ﻿using System;
-namespace AnimalZoo
+namespace AnimalZoo.AnimalGroups
 {
-    public class Reptile
+    public abstract class Reptile : Animal
     {
+        public override void AnimalGroup()
+        {
+            Console.WriteLine("Animal group: Reptile");
+        }
+
         public Reptile()
         {
         }

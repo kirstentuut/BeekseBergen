@@ -1,5 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using AnimalZoo.AnimalGroups;
+using AnimalZoo.Birds;
+using AnimalZoo.Fishes;
+using AnimalZoo.Mammals;
+using AnimalZoo.Reptiles;
+
 
 namespace AnimalZoo
 {
@@ -8,37 +14,54 @@ namespace AnimalZoo
         List<Animal> _animallist;
         public Zoo()
         {
+            //Elephant Ollie = new Elephant()
+            //{
+            //    Age = 125, 
+            //    Gender = "Male",
+            //    Weight = 1200
+            //};
+
             _animallist = new List<Animal>();
-            _animallist.Add(new Animal());
+            _animallist.Add(new Elephant("Ollie", 75, "male", 1250));
+            _animallist.Add(new Lion("Nala", 20,"Female", 90));
+            _animallist.Add(new Bear("Knut", 40, "male", 110));
+            _animallist.Add(new Pinguin("Pingu", 12, "Female", 35));
+            _animallist.Add(new Shark("Lenny", 19, "Male", 135));
+            _animallist.Add(new Crocodile("Croc", 32, "Female", 95));
+
         }
 
-        public void ListenToSounds ()
+        public void ShowAllInfo ()
         {
-            foreach (Animal A in _animallist)
+            foreach (Animal animalA in _animallist)
             {
-                A.AnimalSound();
+                animalA.AnimalGroup();
+                animalA.AnimalType();
+
+                Console.WriteLine($"Name: {animalA.Name} \n"
+                                  + $"Age: {animalA.Age} \n"
+                                  + $"Gender: {animalA.Gender}\n"
+                                  + $"Weight: {animalA.Weight} kg");
+
+                animalA.AnimalSound();
             }
         }
-    }
 
-
-    public class Animal
-    {
-        public int NumberOflegs { get; set; }
-        public string SkinType { get; set; }
-        public string ColorSkin { get; set; }
-        public virtual void AnimalSound()
+        public void Eats()
         {
-            Console.WriteLine("Moeee");
+            
         }
-    }
 
-    public class Program
-    {
-        static void Main(string[] args)
+        public void AliveAnimals()
         {
-            Zoo Blijdorp = new Zoo();
-            Blijdorp.ListenToSounds();
+            foreach (Animal animalA in _animallist)
+            {
+                animalA.AnimalGroup();
+                animalA.AnimalType();
+                Console.WriteLine($"Name: {animalA.Name}");
+            }
         }
+
+
     }
 }

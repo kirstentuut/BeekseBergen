@@ -1,10 +1,8 @@
 ﻿using System;
 namespace AnimalZoo.Interfaces
 {
-    public class IHerbivore
+    public interface IHerbivore
     {
-        public IHerbivore()
-        {
-        }
+        void EatPlants();
     }
 }

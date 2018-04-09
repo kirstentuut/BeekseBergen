@@ -5,4 +5,16 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="EmptyClass.cs" />
+    <Compile Remove="Mammals\Dophin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Mammals\" />
+    <Folder Include="Birds\" />
+    <Folder Include="Reptiles\" />
+    <Folder Include="Fishes\" />
+    <Folder Include="AnimalGroups\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>

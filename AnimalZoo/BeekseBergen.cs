@@ -1,15 +1,15 @@
 ﻿using System;
 namespace AnimalZoo
 {
-    public class AnimalZoo
+    public class BeekseBergen
     {
         static void Main(string[] args)
         {
-            Zoo Blijdorp = new Zoo();
-            Blijdorp.ListenToSounds();
+            Zoo BeekseBergen = new Zoo();
+            BeekseBergen.ShowAllInfo();
         }
 
-        public AnimalZoo()
+        public BeekseBergen()
         {
         }
     }

@@ -1,8 +1,9 @@
 ﻿using System;
+using AnimalZoo.Interfaces;
 
-namespace AnimalZoo
+namespace AnimalZoo.Mammals
 {
-    public class Elephant : Mammals
+    public class Elephant : AnimalGroups.Mammal, IHerbivore
     {
 		public override void AnimalSound()
 		{
@@ -14,14 +15,18 @@ namespace AnimalZoo
             Console.WriteLine("Animal type: Elephant");
 		}
 
-		public Elephant(string name, int age, string gender, int weight)
+		public void EatPlants()
+        {
+            
+        }
+
+        public Elephant(string name, int age, string gender, int weight)
         {
             this.Name = name;
             this.Age = age;
             this.Gender = gender;
             this.Weight = weight;
             this.NumberOflegs = 4;
-            this.Eat = "Leaves";
         }
     }
 }

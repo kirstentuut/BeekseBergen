@@ -1,9 +1,14 @@
 ﻿using System;
 namespace AnimalZoo.AnimalGroups
 {
-    public abstract class Birds : Animal
+    public abstract class Bird : Animal
     {
-        public Birds()
+        public override void AnimalGroup()
+        {
+            Console.WriteLine("Animal group: Mammal");
+        }
+
+        public Bird()
         {
         }
     }

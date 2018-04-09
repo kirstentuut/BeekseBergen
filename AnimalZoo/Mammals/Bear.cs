@@ -1,7 +1,9 @@
 ﻿using System;
-namespace AnimalZoo
+using AnimalZoo.Interfaces;
+
+namespace AnimalZoo.Mammals
 {
-    public class Bear : Mammals
+    public class Bear : AnimalGroups.Mammal, ICarnivore, IHerbivore
     {
         public override void AnimalSound()
         {
@@ -13,6 +15,16 @@ namespace AnimalZoo
             Console.WriteLine("Animal type: Bear");
         }
 
+        public void EatMeat()
+        {
+            
+        }
+
+        public void EatPlants()
+        {
+            
+        }
+
         public Bear(string name, int age, string gender, int weight)
         {
             this.Name = name;
@@ -20,7 +32,6 @@ namespace AnimalZoo
             this.Gender = gender;
             this.Weight = weight;
             this.NumberOflegs = 4;
-            this.Eat = "Fish";
         }
     }
 }

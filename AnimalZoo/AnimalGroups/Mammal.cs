@@ -1,7 +1,7 @@
 ﻿using System;
-namespace AnimalZoo
+namespace AnimalZoo.AnimalGroups
 {
-    public abstract class Mammals : Animal
+    public abstract class Mammal : Animal
     {
         public override bool ChildrenInWomb()
         {
@@ -13,7 +13,7 @@ namespace AnimalZoo
             Console.WriteLine("Animal group: Mammal");
 		}
 
-		public Mammals()
+		public Mammal()
         {
         }
 
