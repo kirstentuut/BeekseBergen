@@ -1,5 +1,7 @@
 ﻿using System;
 using AnimalZoo.Interfaces;
+using AnimalZoo.AnimalGroups;
+using AnimalZoo.Business;
 
 namespace AnimalZoo.Reptiles
 {
@@ -15,9 +17,10 @@ namespace AnimalZoo.Reptiles
             Console.WriteLine("Animal type: Crocolide");
         }
 
-        public void EatMeat()
+        public void EatMeat(FoodStock food)
         {
-            
+            food.FoodBeef--;
+            CurrentAmountOfFood++;
         }
 
         public Crocodile(string name, int age, string gender, int weight)

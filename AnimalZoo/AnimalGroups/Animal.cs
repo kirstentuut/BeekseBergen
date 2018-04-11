@@ -1,5 +1,5 @@
 ﻿using System;
-namespace AnimalZoo
+namespace AnimalZoo.AnimalGroups
 {
     public abstract class Animal
     {
@@ -22,9 +22,22 @@ namespace AnimalZoo
         //Determinded for every individual animal
         public string Gender { get; set; }
         public int Age { get; set; }
-        public string Eat { get; set; }
         public int Weight { get; set; }
         public string Name { get; set; }
+
+        //Food stuff:
+        public int MaxFood { get; set; }
+        public int MinFood { get; set; }
+        public int CurrentAmountOfFood { get; set; }
+
+        public bool IsFull => MaxFood <= CurrentAmountOfFood;
+
+        public bool IsStarving => CurrentAmountOfFood < MinFood;
+
+
+
+
+        //public abstract void Eat();
 
         //private int _gender;
         //public int Gender {

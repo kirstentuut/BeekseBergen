@@ -1,9 +1,11 @@
 ﻿using System;
 using AnimalZoo.Interfaces;
+using AnimalZoo.AnimalGroups;
+using AnimalZoo.Business;
 
 namespace AnimalZoo.Fishes
 {
-    public class Shark : AnimalGroups.Fish, ICarnivore
+    public class Shark : Fish, ICarnivore
     {
         public override void AnimalSound()
         {
@@ -15,9 +17,11 @@ namespace AnimalZoo.Fishes
             Console.WriteLine("Animal type: Shark");
         }
 
-        public void EatMeat()
+
+        public void EatMeat(FoodStock food)
         {
-            
+            food.FoodFish--;
+            CurrentAmountOfFood++;
         }
 
         public Shark(string name, int age, string gender, int weight)
@@ -27,6 +31,9 @@ namespace AnimalZoo.Fishes
             this.Gender = gender;
             this.Weight = weight;
             this.NumberOflegs = 0;
+            this.MaxFood = 40;
+            this.MinFood = 1;
+            this.CurrentAmountOfFood = 1;
         }
 
     }

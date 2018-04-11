@@ -8,6 +8,8 @@ namespace AnimalZoo.AnimalGroups
             return true;
         }
 
+        public int MaxNumberOfChildernInWomb { get; set; }
+
 		public override void AnimalGroup()
 		{
             Console.WriteLine("Animal group: Mammal");

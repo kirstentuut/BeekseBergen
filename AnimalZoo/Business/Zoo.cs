@@ -1,19 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using AnimalZoo.AnimalGroups;
+using AnimalZoo.Interfaces;
 using AnimalZoo.Birds;
 using AnimalZoo.Fishes;
 using AnimalZoo.Mammals;
 using AnimalZoo.Reptiles;
 
 
-namespace AnimalZoo
+namespace AnimalZoo.Business
 {
     public class Zoo
     {
+        public FoodStock _foodstock;
+
         List<Animal> _animallist;
+
         public Zoo()
         {
+            _foodstock = new FoodStock();
+
             //Elephant Ollie = new Elephant()
             //{
             //    Age = 125, 
@@ -28,6 +34,7 @@ namespace AnimalZoo
             _animallist.Add(new Pinguin("Pingu", 12, "Female", 35));
             _animallist.Add(new Shark("Lenny", 19, "Male", 135));
             _animallist.Add(new Crocodile("Croc", 32, "Female", 95));
+            _animallist.Add(new Rabbit("Thumper", 3, "Female", 5));
 
         }
 
@@ -45,12 +52,30 @@ namespace AnimalZoo
 
                 animalA.AnimalSound();
             }
-        }
+        }   
 
-        public void Eats()
+        public void Feeding()
         {
             
+            foreach (Animal animalA in _animallist)
+            {
+                while (!animalA.IsFull)
+                {
+                    if (animalA is ICarnivore carnivore)
+                    {
+                        
+                        //ICarnivore carnivore = (ICarnivore)animalA;
+                        carnivore.EatMeat(_foodstock);
+                    }
+                    if (animalA is IHerbivore herbivore)
+                    {
+                        herbivore.EatPlants(_foodstock);
+                    }
+                }
+                //Console.WriteLine($"{_foodstock.FoodBeef}\n {_foodstock.FoodGrass}");
+            }
         }
+
 
         public void AliveAnimals()
         {
@@ -61,7 +86,5 @@ namespace AnimalZoo
                 Console.WriteLine($"Name: {animalA.Name}");
             }
         }
-
-
     }
 }

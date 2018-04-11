@@ -2,10 +2,10 @@
 using AnimalZoo.AnimalGroups;
 using AnimalZoo.Interfaces;
 using AnimalZoo.Business;
-               
+
 namespace AnimalZoo.Mammals
 {
-    public class Lion : Mammal, ICarnivore
+    public class Rabbit : Mammal, IHerbivore
     {
         public override void AnimalSound()
         {
@@ -17,20 +17,20 @@ namespace AnimalZoo.Mammals
             Console.WriteLine("Animal Type: Lion");
         }
 
-        public void EatMeat(FoodStock food)
+        public void EatPlants(FoodStock food)
         {
-            food.FoodBeef--;
+            food.FoodGrass--;
             CurrentAmountOfFood++;
         }
 
-        public Lion(string name, int age, string gender, int weight)
+        public Rabbit(string name, int age, string gender, int weight)
         {
             this.Name = name;
             this.Age = age;
             this.Gender = gender;
             this.Weight = weight;
             this.NumberOflegs = 4;
-            this.MaxFood = 30;
+            this.MaxFood = 5;
             this.MinFood = 1;
             this.CurrentAmountOfFood = 1;
 

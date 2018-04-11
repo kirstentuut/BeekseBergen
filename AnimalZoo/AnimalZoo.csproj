@@ -16,5 +16,6 @@
     <Folder Include="Fishes\" />
     <Folder Include="AnimalGroups\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Business\" />
   </ItemGroup>
 </Project>
