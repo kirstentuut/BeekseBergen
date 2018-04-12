@@ -30,9 +30,14 @@ namespace AnimalZoo.AnimalGroups
         public int MinFood { get; set; }
         public int CurrentAmountOfFood { get; set; }
 
-        public bool IsFull => MaxFood <= CurrentAmountOfFood;
+        public bool IsFull => CurrentAmountOfFood >= MaxFood;
 
         public bool IsStarving => CurrentAmountOfFood < MinFood;
+
+        //public static implicit operator Animal(Random v)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
 

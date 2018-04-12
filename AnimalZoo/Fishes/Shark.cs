@@ -18,10 +18,19 @@ namespace AnimalZoo.Fishes
         }
 
 
-        public void EatMeat(FoodStock food)
+        public bool EatMeat(FoodStock food)
         {
-            food.FoodFish--;
-            CurrentAmountOfFood++;
+            if (food.FoodFish >= 1)
+            {
+                food.FoodFish--;
+                CurrentAmountOfFood++;
+                Console.WriteLine("An shark is eating fish");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Shark(string name, int age, string gender, int weight)

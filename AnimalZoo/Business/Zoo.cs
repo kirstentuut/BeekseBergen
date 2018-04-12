@@ -20,22 +20,14 @@ namespace AnimalZoo.Business
         {
             _foodstock = new FoodStock();
 
-            //Elephant Ollie = new Elephant()
-            //{
-            //    Age = 125, 
-            //    Gender = "Male",
-            //    Weight = 1200
-            //};
-
             _animallist = new List<Animal>();
+             _animallist.Add(new Rabbit("Thumper", 3, "Female", 5));
             _animallist.Add(new Elephant("Ollie", 75, "male", 1250));
             _animallist.Add(new Lion("Nala", 20,"Female", 90));
             _animallist.Add(new Bear("Knut", 40, "male", 110));
             _animallist.Add(new Pinguin("Pingu", 12, "Female", 35));
             _animallist.Add(new Shark("Lenny", 19, "Male", 135));
             _animallist.Add(new Crocodile("Croc", 32, "Female", 95));
-            _animallist.Add(new Rabbit("Thumper", 3, "Female", 5));
-
         }
 
         public void ShowAllInfo ()
@@ -54,25 +46,46 @@ namespace AnimalZoo.Business
             }
         }   
 
+
         public void Feeding()
         {
-            
+            //Random rnd = new Random();
+
+            //int numberfromlist = rnd.Next(0, _animallist.Count);
+
+            //Animal randomanimal = numberfromlist Animal._animallist;
+
+            //Animal randomanimal = new Random();
+
+            //Console.WriteLine($"{randomanimal}");
+
+            //switch (randomanimal)
+            //{
+            //    //case Animal.Elephant
+            //}
+
             foreach (Animal animalA in _animallist)
             {
                 while (!animalA.IsFull)
                 {
+                    bool haseaten = false;
+
                     if (animalA is ICarnivore carnivore)
                     {
-                        
-                        //ICarnivore carnivore = (ICarnivore)animalA;
-                        carnivore.EatMeat(_foodstock);
+                        haseaten = carnivore.EatMeat(_foodstock);
                     }
                     if (animalA is IHerbivore herbivore)
                     {
-                        herbivore.EatPlants(_foodstock);
+                        haseaten = herbivore.EatPlants(_foodstock);
+                    }
+                    if (haseaten == false)
+                    {
+                        Console.WriteLine($"{animalA.Name} is still hungry");
+                        break;
+                        //_foodstock.Reset();
                     }
                 }
-                //Console.WriteLine($"{_foodstock.FoodBeef}\n {_foodstock.FoodGrass}");
+
             }
         }
 

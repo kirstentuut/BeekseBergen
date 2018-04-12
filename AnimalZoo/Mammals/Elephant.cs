@@ -17,10 +17,19 @@ namespace AnimalZoo.Mammals
             Console.WriteLine("Animal type: Elephant");
 		}
 
-        public void EatPlants(FoodStock food)
+        public bool EatPlants(FoodStock food)
         {
-            food.FoodLeaves--;
-            CurrentAmountOfFood++;
+            if (food.FoodLeaves >= 1)
+            {
+                food.FoodLeaves--;
+                CurrentAmountOfFood++;
+                Console.WriteLine("An elephant is eating leaves");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Elephant (string name, int age, string gender, int weight)

@@ -17,20 +17,33 @@ namespace AnimalZoo.Mammals
             Console.WriteLine("Animal type: Bear");
         }
 
-        public void EatMeat(FoodStock food)
+        public bool EatMeat(FoodStock food)
         {
             if (food.FoodFish >=1)
             {
                 food.FoodFish--;
                 CurrentAmountOfFood++;
+                Console.WriteLine("An bear is eating fish");
+                return true;
             }
-
+            else
+            {
+                return false;
+            }
         }
 
-        public void EatPlants(FoodStock foodstock)
+        public bool EatPlants(FoodStock food)
         {
-            foodstock.FoodLeaves--;
-            CurrentAmountOfFood++;
+            if (food.FoodLeaves >= 1)
+            {
+                food.FoodLeaves--;
+                CurrentAmountOfFood++;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Bear(string name, int age, string gender, int weight)

@@ -17,10 +17,19 @@ namespace AnimalZoo.Reptiles
             Console.WriteLine("Animal type: Crocolide");
         }
 
-        public void EatMeat(FoodStock food)
+        public bool EatMeat(FoodStock food)
         {
-            food.FoodBeef--;
-            CurrentAmountOfFood++;
+            if (food.FoodFish >= 1)
+            {
+                food.FoodBeef--;
+                CurrentAmountOfFood++;
+                Console.WriteLine("An crocodile is eating beef");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Crocodile(string name, int age, string gender, int weight)

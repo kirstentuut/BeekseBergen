@@ -17,10 +17,19 @@ namespace AnimalZoo.Mammals
             Console.WriteLine("Animal Type: Lion");
         }
 
-        public void EatPlants(FoodStock food)
+        public bool EatPlants(FoodStock food)
         {
-            food.FoodGrass--;
-            CurrentAmountOfFood++;
+            if (food.FoodFish >= 1)
+            {
+                food.FoodGrass--;
+                CurrentAmountOfFood++;
+                Console.WriteLine("An rabbit is eating grass");
+                return true;
+            }
+            else 
+            {
+                return false;
+            }
         }
 
         public Rabbit(string name, int age, string gender, int weight)

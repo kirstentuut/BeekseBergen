@@ -11,27 +11,27 @@ namespace AnimalZoo.Business
 
         public int FoodGrass { get; set; }
 
-        private int foodFruit;
+        //private int foodFruit;
 
-        public int FoodFruit
-        {
-            get
-            {
-                return foodFruit;
-            }
+        public int FoodFruit { get; set; }
+        //{
+        //    //get
+        //    //{
+        //    //    return foodFruit;
+        //    //}
 
-            set
-            {
-                if (value >=0 )
-                {
-                    foodFruit = value;
-                }
-                else 
-                {
-                    throw new NoFoodExeption();
-                }
-            }
-        }
+        //    //set
+        //    //{
+        //    //    if (value >=0 )
+        //    //    {
+        //    //        foodFruit = value;
+        //    //    }
+        //    //    else 
+        //    //    {
+        //    //        throw new NoFoodExeption();
+        //    //    }
+        //    //}
+        //}
 
         public void Reset ()
         {

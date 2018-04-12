@@ -17,10 +17,19 @@ namespace AnimalZoo.Birds
             Console.WriteLine("Animal type: Pinguin");
         }
 
-        public void EatMeat(FoodStock food)
+        public bool EatMeat(FoodStock food)
         {
-            food.FoodFish--;
-            CurrentAmountOfFood++;
+            if (food.FoodFish >= 1)
+            {
+                food.FoodFish--;
+                CurrentAmountOfFood++;
+                Console.WriteLine("An pinguin is eating fish");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public Pinguin(string name, int age, string gender, int weight)

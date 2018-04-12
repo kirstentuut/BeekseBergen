@@ -5,6 +5,6 @@ namespace AnimalZoo.Interfaces
 {
     public interface ICarnivore
     {
-        void EatMeat(FoodStock food);
+        bool EatMeat(FoodStock food);
     }
 }
